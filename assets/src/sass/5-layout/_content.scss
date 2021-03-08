@@ -1,0 +1,35 @@
+.site-content {
+    row-gap: 15rem;
+
+    &__section {
+        padding-bottom: 8rem;
+
+        &--home {
+            padding: 10rem 0;
+        }
+    }
+
+    &--dark {
+        background-image: linear-gradient(to right, $color-gcp-tertiary, $color-gcp-tertiary 60%, $color-white 60%);
+
+        @include respond(tab-port) {
+            background-image: linear-gradient(to right, $color-gcp-tertiary, $color-gcp-tertiary);
+        }
+    }
+
+    &--light {
+        background-image: linear-gradient(to left, $color-gray-light, $color-gray-light 60%, $color-white 60%);
+
+        @include respond(phone) {
+            background-image: linear-gradient(to left, $color-gray-light, $color-gray-light);
+        }
+    }
+}
+
+
+// ********************
+// CARDS LAYOUT
+// ********************
+.cards {
+    @include gridCols(26rem, 3rem, 3rem);
+}

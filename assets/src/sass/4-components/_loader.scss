@@ -1,0 +1,54 @@
+.loader {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255 , .8);
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include transition15();
+
+    &--active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__circle,
+    &__circle:after {
+        border-radius: 50%;
+        width: 10em;
+        height: 10em;
+    }
+    &__circle {
+        font-size: 1rem;
+        position: relative;
+        text-indent: -9999em;
+        border-top: 1.1em solid rgba(194,27,23, 0.2);
+        border-right: 1.1em solid rgba(194,27,23, 0.2);
+        border-bottom: 1.1em solid rgba(194,27,23, 0.2);
+        border-left: 1.1em solid $color-gcp-primary;
+        transform: translateZ(0);
+    }
+
+    &--active &__circle {
+        animation: load8 1.1s infinite linear;
+    }
+}
+
+
+
+@keyframes load8 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }

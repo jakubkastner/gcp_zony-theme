@@ -1,0 +1,54 @@
+// ********************
+// Transition mxin
+// ********************
+
+@mixin fullBgImg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin transition15 {
+  transition: all 0.15s ease-out;
+}
+
+@mixin transition30 {
+  transition: all 0.3s ease-out;
+}
+
+// ********************
+// MEDIA QUERY MANAGER
+// ********************
+/*
+0 - 600px:          Phone
+600 - 900px:        Tablet portrai
+900 - 1200px:       Tablet landscape
+(1200 - 1800px)     Our styles
+1800px >= :         Big screeens
+
+$breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+// ********************
+// Buttons styles
+// ********************
+
+// Basic button
+.btn {
+    background: $color-gcp-primary;
+    color: $color-white;
+    border-radius: 0;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: normal;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    cursor: pointer;
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-gcp-secondary;
+    }
+
+    &--arrow::after {
+        content: '';
+        background-image: url(../../img/arrow.svg);
+        background-position: center;
+        background-size: cover;
+        height: 1.1rem;
+        width: .7rem;
+    }
+
+    &--arrow-back::before {
+        content: '';
+        background-image: url(../../img/arrow.svg);
+        background-position: center;
+        background-size: cover;
+        height: 1.1rem;
+        width: .7rem;
+        transform: rotate(180deg);
+    }
+
+    &--secondary {
+		background-color: $color-gray-dark-2;
+
+        &:hover {
+            background-color: $color-gray-dark;
+        }
+    }
+}
+
+
+// Button to scroll down
+.scroll-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__btn {
+        
+    }
+}

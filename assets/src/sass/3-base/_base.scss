@@ -1,0 +1,34 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // now 1rem = 10px
+    scroll-behavior: smooth;
+
+    @include respond(tab-land) {
+        font-size: 56%;
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out;
+    visibility: hidden;
+}
+
+p {
+    font-size: 1.8rem;
+    font-weight: 100;
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}

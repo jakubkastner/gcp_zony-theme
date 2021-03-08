@@ -1,0 +1,102 @@
+// ********************
+// Home page styles after login
+// ********************
+
+.intro  {
+    height: calc(100vh - 18rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    animation: fadeInTop .5s .3s backwards;
+
+    @include respond(phone) {
+        display: none;
+     }
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__highlight {
+        background-color: $color-gray-light;
+        padding: 5rem;
+    }
+
+    &__photo {
+        display: inline-block;
+        float: left;
+        border-radius: 50%;
+        margin: 4rem 4rem 4rem 0;
+        max-width: 20rem;
+        shape-outside: circle(50% at 45% 50%);
+    }  
+    
+    &__scroll-down {
+        margin: auto;
+        cursor: pointer;
+        animation: dropdown 2s infinite;
+    }
+}
+
+
+
+// ********************
+// Home page styles for visitor who is not logged
+// ********************
+
+.welcome-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    background-image: linear-gradient(rgba(0,0,0,.42),
+                    rgba(0,0,0,.42)),
+                      url('../../img/login_bg.jpg');
+    @include fullBgImg;
+
+    &__logo-box {
+        align-self: flex-start;
+        padding: 3rem 8rem;
+        background: $color-white;
+    }
+
+    &__logo {
+        display: block;
+        height: auto;
+        width: 25rem;
+    }
+
+    &__text-box {
+        align-self: flex-end;
+        padding: 3rem 8rem;
+        background: $color-gcp-primary;
+
+        h1 {
+            color: $color-white;
+        }
+    }
+}
+
+
+// ********************
+// Mastupni den section
+// ********************
+
+.nastupni-den {
+    padding: 0;
+
+    &__wrapper {
+        padding: 10rem 0;
+        background-image: url(../../img/nastupni-den.png);
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: flex-end;
+    }
+}

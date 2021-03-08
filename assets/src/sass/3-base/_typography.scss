@@ -1,0 +1,85 @@
+// ********************
+// Fonnt face styles
+// ********************
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('../../fonts/helvetica-neue-lt-pro/helvetica-neue-lt-pro-light.otf');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('../../fonts/helvetica-neue-lt-pro/helvetica-neue-lt-pro-roman.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('../../fonts/helvetica-neue-lt-pro/helvetica-neue-lt-pro-bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('../../fonts/helvetica-neue-lt-pro/helvetica-neue-lt-pro-italic.otf');
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+
+// ********************
+// Typgraphy styles
+// ********************
+
+body {
+    font-family: $primary-font;
+    font-weight: 100;
+    line-height: 1.7;
+    color: $color-black-light;
+}
+
+h1, h2, h3, h4, h5, h6, {
+    font-weight: 100;
+    color: $color-black;
+}
+
+.heading-primary,
+.heading-secondary {
+    &--light {
+        color: $color-white;
+    }
+
+    &--dark {
+        color: $color-black;
+    }
+}
+
+.heading-primary {
+    font-size: 5rem;
+    line-height: 1.2;
+
+    &--sub {
+        font-size: 2rem;
+    }
+}
+.heading-secondary {
+    font-size: 3rem;
+    font-weight: 400;
+
+    &--line::before {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 15rem;
+        background-color: $color-gcp-secondary;
+        margin-bottom: 3rem;
+    }
+}
+
+.heading-tertiary {
+    font-size: 2rem;
+    font-weight: 100;
+}

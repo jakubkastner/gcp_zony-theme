@@ -1,0 +1,35 @@
+// ********************
+// Margin utilities
+// ********************
+
+.mb-sm { margin-bottom: 1.5rem !important; }
+.mb-md {
+    margin-bottom: 3rem !important;
+
+    @include respond(tab-port) {
+        margin-bottom: 2rem !important;
+    }
+}
+
+.mb-lg { 
+    margin-bottom: 6rem !important;
+
+    @include respond(tab-port) {
+        margin-bottom: 3.5rem !important;
+    }
+}
+
+.mt-md { margin-top: 3rem !important; }
+.mt-lg { margin-top: 6rem !important; }
+.mt-xl { margin-top: 10rem !important; }
+
+// ********************
+// Padding utilities
+// ********************
+.p-md {
+    padding-bottom: 3rem !important;
+
+    @include respond(tab-port) {
+        padding-bottom: 2rem !important;
+    }
+}

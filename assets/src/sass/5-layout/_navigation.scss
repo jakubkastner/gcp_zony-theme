@@ -1,0 +1,304 @@
+// ********************
+// Navbar styles styles
+// ********************
+
+//center nav items into center
+.navbar {
+  grid-column: center-start / center-end;
+  padding: 3rem 0;
+  margin-right: 3px;
+}
+
+.navbar-collapse {
+  justify-content: center;
+}
+
+.navbar-brand {
+  &__logo {
+    display: block;
+    height: auto;
+    margin: auto;
+    width: 25rem;
+
+    &--gcd {
+      width: 20rem;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin-top: 1rem;
+    color: $color-black;
+    border-top: 3px solid $color-gcp-secondary;
+  }
+}
+
+.navbar-logout {
+  flex-shrink: 0;
+  color: $color-gcp-primary;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  @include transition15();
+
+  &:hover {
+    color: $color-gcp-secondary;
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+
+  &__icon {
+    font-size: 2rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+  }
+}
+
+.navbar-toggler {
+  height: 6rem;
+  font-size: 0;
+  border-radius: 0;
+  padding: 1rem;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__icon {
+    position: relative;
+    opacity: 1;
+
+    &,
+    &::before,
+    &::after {
+      width: 5rem;
+      height: 2px;
+      background-color: $color-gcp-primary;
+      display: inline-block;
+      @include transition15();
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: 1.2rem;
+    }
+
+    &::after {
+      top: -1.2rem;
+    }
+  }
+
+  // Rotate from === to X  when mobile menu collapse
+  &[aria-expanded="true"] {
+    .navbar-toggler__icon {
+      background-color: transparent;
+      &::before {
+        top: 0;
+        transform: rotate(135deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+}
+
+.navbar-nav {
+  & > .nav-item:not(:last-child) {
+    margin-right: 2px;
+  }
+
+  & > .nav-item {
+    position: relative;
+
+    &:nth-of-type(3n + 1) {
+      .nav-link {
+        border-color: $color-gcp-primary;
+      }
+
+      &:hover {
+        background-color: $color-gcp-primary;
+
+        &::after {
+          content: "";
+          background-color: $color-gcp-primary;
+        }
+
+        .dropdown-menu {
+          background-color: $color-gcp-primary;
+
+          .dropdown-item:hover {
+            color: $color-gcp-primary;
+          }
+        }
+      }
+    }
+
+    &:nth-of-type(3n + 2) {
+      .nav-link {
+        border-color: $color-gcp-secondary;
+      }
+
+      &:hover {
+        background-color: $color-gcp-secondary;
+
+        &::after {
+          content: "";
+          background-color: $color-gcp-secondary;
+        }
+
+        .dropdown-menu {
+          background-color: $color-gcp-secondary;
+
+          .dropdown-item:hover {
+            color: $color-gcp-secondary;
+          }
+        }
+      }
+    }
+
+    &:nth-of-type(3n + 3) {
+      .nav-link {
+        border-color: $color-gcp-tertiary;
+      }
+
+      &:hover {
+        background-color: $color-gcp-tertiary;
+
+        &::after {
+          content: "";
+          background-color: $color-gcp-tertiary;
+        }
+
+        .dropdown-menu {
+          background-color: $color-gcp-tertiary;
+
+          .dropdown-item:hover {
+            color: $color-gcp-tertiary;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 7px;
+        position: absolute;
+        top: 4rem;
+      }
+
+      & > .nav-link {
+        color: $color-white;
+      }
+
+      & > .dropdown-toggle::after {
+        background-color: $color-white;
+        transform: rotate(270deg);
+      }
+
+      & > .dropdown-menu {
+        transform: scaleY(1);
+        @include transition15;
+      }
+    }
+
+    .nav-link {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      padding: 1rem 1.5rem 0.5rem 1.5rem;
+      border-bottom: 3px solid;
+      font-size: 1.5rem;
+      font-weight: 100;
+      color: $color-black;
+      text-transform: uppercase;
+    }
+  }
+
+  & > .nav-item.show {
+    @include respond(tab-port) {
+      background-color: $color-gcp-primary;
+      color: $color-white;
+
+      .nav-link {
+        color: $color-white;
+        &::after {
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  .dropdown-toggle {
+    cursor: default;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      mask-image: url("../../img/arrow.svg");
+      mask-size: cover;
+      background-color: $color-black;
+      width: 0.5rem;
+      height: 0.85rem;
+      transform: rotate(90deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    padding: 3rem 3rem;
+    list-style: none;
+
+    position: absolute;
+    top: 4.7rem;
+    left: -3rem;
+    z-index: 1000;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: none;
+
+    @include respond(tab-port) {
+      position: initial;
+      display: none;
+    }
+
+    .dropdown-item {
+      display: inline-block;
+      font-size: 1.5rem;
+      font-weight: 100;
+      padding: 0.7rem 1.2rem;
+      color: $color-white;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: $color-white;
+      }
+    }
+  }
+
+  .dropdown-menu.show {
+    @include respond(tab-port) {
+      display: block;
+      transform: scaleY(1);
+    }
+  }
+}

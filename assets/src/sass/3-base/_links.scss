@@ -1,0 +1,8 @@
+a {
+    color: $color-gcp-primary;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-gcp-secondary;
+    }
+}

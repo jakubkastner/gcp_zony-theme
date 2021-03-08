@@ -1,0 +1,61 @@
+// ********************
+// Login form styles
+// ********************
+.login-form {
+    background: $color-white;
+    padding: 5rem;
+
+    &__group {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        font-size: 1.6rem;
+        top: 1.2rem;
+        left: 2rem;
+        color: $color-gray-dark;
+        cursor: text;
+        @include transition15()
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        padding: 1.5rem 2rem;
+        border: 1px solid $color-gray;
+        font-size: 1.6rem;
+        @include transition15();
+
+        &:focus {
+            outline: none;
+            border: 1px solid $color-gcp-primary;
+        }
+    }
+
+    // Applies when the input is selected or filled
+    &__input:focus + &__label, 
+    &__input:not(:placeholder-shown) + &__label {
+        background-color: $color-white;
+        padding: 0 .5rem;
+        font-size: 1.5rem;
+        top: -1.3rem;
+        left: 1.5rem;
+        cursor: default;
+    }
+
+    &__error {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $color-gcp-secondary;
+    }
+
+    &__submit {
+        width: 100%;
+        padding: 1.5rem 2rem;
+    }
+}

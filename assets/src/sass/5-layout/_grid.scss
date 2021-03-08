@@ -1,0 +1,33 @@
+// ********************
+// GRID LAYOUT MIXINS
+// ********************
+@mixin grid($cols, $side-padding: 3rem) {
+    display: grid;
+    grid-template-columns:  [full-start] minmax(#{$side-padding}, 1fr)
+                            [center-start] repeat($cols, [col-start] minmax(min-content, calc(120rem / #{$cols})) [col-end])
+                            [center-end] minmax(#{$side-padding}, 1fr)
+                            [full-end];
+}
+
+@mixin gridCols($min-width, $col-gap: 0, $row-gap: 0) {
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, [col-start] minmax(#{$min-width}, 1fr) [col-end]);
+    justify-items: center;
+    column-gap: $col-gap;
+    row-gap: $row-gap;
+}
+
+// ********************
+// GRID CLASS
+// ********************
+.grid {
+    @include grid(1);
+    
+    &-col--full {
+        grid-column: full-start / full-end;
+    }
+
+    &-col--center {
+        grid-column: center-start / center-end;
+    }
+}

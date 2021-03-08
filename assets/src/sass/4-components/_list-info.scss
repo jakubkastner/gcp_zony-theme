@@ -1,0 +1,38 @@
+.list-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem;
+    border-top: 3px solid $color-gcp-secondary;
+    background-color: $color-white;
+    max-width: 45rem;
+
+    &__heading {
+        font-size: 2.6rem;
+        line-height: 1;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 1.6rem;
+    }
+
+    &__item {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            height: 1.2rem;
+            width: 1.7rem;
+            background-color: $color-gcp-secondary;
+            mask-image: url(../../img/check.svg);
+            mask-size: cover;
+        }
+    }
+}
