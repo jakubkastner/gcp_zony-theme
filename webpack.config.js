@@ -5,8 +5,8 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 
 module.exports = {
-    
-    entry: ['./assets/src/index.js'], 
+
+    entry: ['./assets/src/index.js'],
 
     output: {
         path: path.resolve(__dirname, "assets/dist/js"),
@@ -70,9 +70,10 @@ module.exports = {
     plugins: [
             new BrowserSyncPlugin({
                 files: ['**/*.php'],
-                proxy: 'zona.localhost',
+                proxy: 'http://localhost:10034/',
                 host: 'localhost',
-                open: false
+                https: false,
+                open: true
             }),
             new MiniCssExtractPlugin({
                 filename: '../css/style.css'
@@ -88,7 +89,7 @@ module.exports = {
         ],
     },
 
-    watchOptions: { 
+    watchOptions: {
         ignored: /node_modules/
     }
 }

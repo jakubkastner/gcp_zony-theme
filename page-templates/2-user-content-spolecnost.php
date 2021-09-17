@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: 2 user content (uvazek)
+ * Template name: 2 user content (spolecnost)
  */
 
 get_header();
@@ -15,19 +15,19 @@ get_header();
 
             switch ($role) {
                 case 'administrator':
-                    print( get_field('hpp') );
+                    print( get_field('gcp') );
                     break 2;
                 case 'gcp-hpp':
-                    print( get_field('hpp') );
+                    print( get_field('gcp') );
                     break 2;
                 case 'gcp-dpp':
-                    print( get_field('dpp') );
+                    print( get_field('gcp') );
                     break 2;
                 case 'gcd-hpp':
-                    print( get_field('hpp') );
+                    print( get_field('gcd') );
                     break 2;
                 case 'gcd-dpp':
-                    print( get_field('dpp') );
+                    print( get_field('gcd') );
                     break 2;
             }
         }

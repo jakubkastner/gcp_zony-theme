@@ -1,14 +1,11 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 module.exports = {
   entry: ["./assets/src/index.js"],
-
   output: {
     path: path.resolve(__dirname, "assets/dist/js"),
     filename: "bundle.js",
   },
-
   module: {
     rules: [
       {
@@ -33,7 +30,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(wof|wof2|eot|ttf|otf)$/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
         exclude: /node_modules/,
         loader: "file-loader",
         options: {
@@ -53,7 +50,6 @@ module.exports = {
       },
     ],
   },
-
   plugins: [
     new MiniCssExtractPlugin({
       filename: "../css/style.css",
