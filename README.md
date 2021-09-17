@@ -1,2 +1,5 @@
-# nastup-zona-generaliceska
-Wordpress theme - Portal for new employees of Generali Česká pojišťovna a. s. - https://nastup.generaliceska.cz
+# Generali Česká pojišťovna - Zóny pro nové zaměstnance - WordPress šablona
+
+WordPress šablona pro nové zaměstnance nastupující do Skupiny Generali v Česku
+* https://nastup.generaliceska.cz
+* https://dotaznik.generali.cz
