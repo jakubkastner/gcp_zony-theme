@@ -19,7 +19,7 @@
 	<link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri() . '/assets/dist/img/favicon.ico' ;?>" />
 
 	<?php wp_head(); ?>
-	
+
 </head>
 
 <body <?php body_class( 'grid' ); ?>>
@@ -39,20 +39,20 @@
 				foreach ($currentUserRoles as $role) {
 
 					if ($role == 'gcd-dpp' || $role == 'gcd-hpp') {
-		
+
 						$logo = 'gcd';
 						break;
-		
+
 					} else {
-		
+
 						$logo = 'gcp';
 						break;
-		
+
 					}
 				}
 			?>
 
-			<?php if ($logo == 'gcd') : ?>	
+			<?php if ($logo == 'gcd') : ?>
 
 				<svg class="navbar-brand__logo navbar-brand__logo--gcd"xmlns="http://www.w3.org/2000/svg" width="300.825" height="78.125" viewBox="0 0 300.825 78.125">
 					<g id="Group_10" data-name="Group 10" transform="translate(-0.704 -0.652)">
@@ -91,7 +91,7 @@
 						</g>
 					</g>
 				</svg>
-	
+
 			<?php else : ?>
 
 				<svg class="navbar-brand__logo" xmlns="http://www.w3.org/2000/svg" width="1386.134" height="233.254" viewBox="0 0 1386.134 233.254">
@@ -140,7 +140,7 @@
 				</svg>
 
 			<?php endif; ?>
-					
+
 					<span class="navbar-brand__text"><?php bloginfo( 'name' ); ?></span>
 				</a>
 
@@ -163,7 +163,7 @@
 					]);
 				?>
 
-				
+
 				<a class="navbar-logout" href="<?php echo esc_url( wp_logout_url( home_url() ) ) ;?>">
 					<svg width="1em" height="1em" viewBox="0 0 16 16" class="navbar-logout__icon bi bi-box-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
@@ -171,7 +171,7 @@
 					</svg>
 					<span class="navbar-logout__text">Odhlásit se</span>
 				</a>
-			
+
 			</nav>
 		</header><!-- #masthead -->
 
@@ -179,4 +179,4 @@
 			<main id="content" class="site-content grid grid-col--full">
 		<?php endif;?>
 
-	<?php endif; ?>	
+	<?php endif; ?>

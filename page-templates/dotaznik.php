@@ -1,12 +1,12 @@
 <?php
 /**
- * Template name: 4 user content (spolecnost a uvazek)
+ * Template name: Dotazník
  */
 
 get_header();
 ?>
 
-<section class="site-content__section site-content__section__page grid-col--center">
+<section class="site-content__section site-content__section__dotaznik grid-col--center">
 
     <?php
         $current_user = wp_get_current_user();
@@ -25,6 +25,9 @@ get_header();
                     break 2;
                 case 'gcd-hpp':
                     print( get_field('gcd-hpp') );
+                    break 2;
+                case 'gcd-dpp':
+                    print( get_field('gcd-dpp') );
                     break 2;
             }
         }

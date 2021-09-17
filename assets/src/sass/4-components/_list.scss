@@ -1,4 +1,5 @@
-.list {
+.list,
+.site-content__section__page ul {
     list-style: none;
     padding-left: 3rem;
     margin: 1rem 0 1.5rem 0;
@@ -6,11 +7,12 @@
     flex-direction: column;
     gap: 1rem;
 
-	&__item {
-		display: flex;
+	&__item,
+	li {
 		align-items: center;
         gap: 1rem;
         font-size: 1.8rem;
+		position: relative;
 
 		&::before {
 			content: '';
@@ -21,13 +23,16 @@
             margin-top: .8rem;
 			mask-image: url(../../img/list-item-icon.svg);
 			mask-size: cover;
-			background-color: $color-gcp-secondary
+			background-color: $color-gcp-secondary;
+			position: absolute;
+			left: -2rem;
+			top: .25rem;
 		}
 
 		// Fix display radio button when the label text is too long
-		span {
+		/*span {
             width: 100%;
             line-height: 1.5;
-		}
+		}*/
 	}
 }

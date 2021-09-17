@@ -63,5 +63,11 @@
     &__brand-text {
         font-size: 1.3rem;
         color: $color-white;
+        a {
+            color: $color-white;
+            &:hover {
+                color: $color-gcp-secondary;
+            }
+        }
     }
 }

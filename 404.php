@@ -7,20 +7,29 @@
  * @package generaliceska
  */
 
-// show error
-get_header();
-?>
+$home = get_home_url();
+if (empty($home) === false)
+{
+	// redirect to home page
+	wp_safe_redirect($home);
+}
+else
+{
+	// show error
+	get_header();
+	?>
 
-	<div class="site-content__section grid-col--center">
+		<div class="site-content__section grid-col--center">
 
-		<h1 class="heading heading-primary"><?php esc_html_e( 'Error 404', 'generaliceska' ); ?></h1>
-		<br>
-		<br>
-		<br>
-		<br>
-		<h1 class="heading heading-primary"><?php esc_html_e( 'Stránka nenalezena.', 'generaliceska' ); ?></h1>
+			<h1 class="heading heading-primary"><?php esc_html_e( 'Error 404', 'generaliceska' ); ?></h1>
+			<br>
+			<br>
+			<br>
+			<br>
+			<h1 class="heading heading-primary"><?php esc_html_e( 'Stránka nenalezena.', 'generaliceska' ); ?></h1>
 
-	</div><!-- #main -->
+		</div><!-- #main -->
 
-<?php
-get_footer();
+	<?php
+	get_footer();
+}

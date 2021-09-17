@@ -1,19 +1,15 @@
-// ********************
-// Transition mxin
-// ********************
-
 @mixin fullBgImg {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 @mixin transition15 {
-  transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out;
 }
 
 @mixin transition30 {
-  transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 // ********************
@@ -34,21 +30,21 @@ $breakpoint argument choices
 */
 
 @mixin respond($breakpoint) {
-  @if $breakpoint == phone {
-    @media only screen and (max-width: 37.5em) {
-      @content;
+    @if $breakpoint==phone {
+        @media only screen and (max-width: 37.5em) {
+            @content
+        }
     }
-  }
 
-  @if $breakpoint == tab-port {
-    @media only screen and (max-width: 56.25em) {
-      @content;
+    @if $breakpoint==tab-port {
+        @media only screen and (max-width: 56.25em) {
+            @content
+        }
     }
-  }
 
-  @if $breakpoint == tab-land {
-    @media only screen and (max-width: 75em) {
-      @content;
+    @if $breakpoint==tab-land {
+        @media only screen and (max-width: 75em) {
+            @content
+        }
     }
-  }
 }
