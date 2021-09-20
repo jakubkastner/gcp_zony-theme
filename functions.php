@@ -103,7 +103,6 @@ add_action( 'after_setup_theme', 'generaliceska_content_width', 0 );
  */
 function generaliceska_scripts() {
 
-
 	wp_enqueue_style('main-css', get_template_directory_uri() .'/assets/dist/css/style.css');
 
 	wp_enqueue_script('index-js', get_template_directory_uri() . '/assets/dist/js/bundle.js', array(), false, true);
@@ -113,6 +112,21 @@ function generaliceska_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'generaliceska_scripts' );
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
 
 /**
  * Customizer additions.
@@ -129,7 +143,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Widgets
  */
-/* require get_template_directory() . '/inc/widgets.php'; */
+require get_template_directory() . '/inc/widgets.php';
 
 /**
  * Bootstrap nav walker
@@ -141,7 +155,7 @@ require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
  */
 require get_template_directory() . '/inc/custom-fields.php';
 
-/** 
+/**
  * Logour redirect to homepage
 */
 
@@ -153,6 +167,6 @@ require get_template_directory() . '/inc/logout-redirect.php';
 require get_template_directory() . '/inc/disable-wp-admin.php';
 
 /**
- * Creeate and destroy session which are necessary to run dotaznik plugin properly
+ * Creeate and destroy session which are necessary to run dotaznik properly
  */
 require get_template_directory() . '/inc/dotaznik-session.php';
