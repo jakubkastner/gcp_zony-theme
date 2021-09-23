@@ -1,8 +1,6 @@
 <?php
 /*
- * Template Name: Home
- *
- * Display home page and content is base on if user is logged in or logout
+ * Template Name: Úvodní stránka
  */
 
 get_header(); ?>
@@ -15,9 +13,7 @@ get_header(); ?>
     <!-- Home page for logged in users -->
     <div class="intro grid-col--center">
         <h1 class="intro__heading heading-primary">Vítejte u nás ve společnosti</h1>
-        <h2 class="intro__heading heading-secondary">
-            Úvodní slovo HR ředitelky
-        </h2>
+        <h2 class="intro__heading heading-secondary">Úvodní slovo HR ředitelky</h2>
         <div class="intro__highlight">
             <img src="/wp-content/uploads/hr-manager.jpg" alt="HR ředitelka" class="intro__photo">
             <p>Vážené kolegyně, vážení kolegové,</p>
@@ -42,7 +38,16 @@ get_header(); ?>
 
             switch ($role) {
                 case 'administrator':
-                    print(get_field('hpp'));
+                    echo '<section class="site-content__section site-content__section__page grid-col--center"><h1 class="heading heading-primary heading-preview mb-md">NÁHLED: všechny společnosti - HPP</h1></section>';
+                    print( get_field('hpp') );
+                    echo '<section class="site-content__section site-content__section__page grid-col--center"><h1 class="heading heading-primary heading-preview mb-md">NÁHLED: všechny společnosti - DPP</h1></section>';
+                    print( get_field('dpp') );
+                    break 2;
+                case 'editor':
+                    echo '<section class="site-content__section site-content__section__page grid-col--center"><h1 class="heading heading-primary heading-preview mb-md">NÁHLED: všechny společnosti - HPP</h1></section>';
+                    print( get_field('hpp') );
+                    echo '<section class="site-content__section site-content__section__page grid-col--center"><h1 class="heading heading-primary heading-preview mb-md">NÁHLED: všechny společnosti - DPP</h1></section>';
+                    print( get_field('dpp') );
                     break 2;
                 case 'gcp-hpp':
                     print(get_field('hpp'));

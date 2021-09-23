@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: 2 user content (uvazek)
+ * Template name: Rozdělení dle úvazku
  */
 
 get_header();
@@ -15,7 +15,16 @@ get_header();
 
             switch ($role) {
                 case 'administrator':
+                    echo '<h1 class="heading heading-primary heading-preview mb-md">NÁHLED: všechny společnosti - HPP</h1>';
                     print( get_field('hpp') );
+                    echo '<h1 class="heading heading-primary heading-preview mb-md">NÁHLED: všechny společnosti - DPP</h1>';
+                    print( get_field('dpp') );
+                    break 2;
+                case 'editor':
+                    echo '<h1 class="heading heading-primary heading-preview mb-md">NÁHLED: všechny společnosti - HPP</h1>';
+                    print( get_field('hpp') );
+                    echo '<h1 class="heading heading-primary heading-preview mb-md">NÁHLED: všechny společnosti - DPP</h1>';
+                    print( get_field('dpp') );
                     break 2;
                 case 'gcp-hpp':
                     print( get_field('hpp') );

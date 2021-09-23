@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: 2 user content (spolecnost)
+ * Template name: Rozdělení dle společnosti
  */
 
 get_header();
@@ -15,7 +15,16 @@ get_header();
 
             switch ($role) {
                 case 'administrator':
+                    echo '<h1 class="heading heading-primary heading-preview mb-md">NÁHLED: Generali Česká pojišťovna - DPP i HPP</h1>';
                     print( get_field('gcp') );
+                    echo '<h1 class="heading heading-primary heading-preview mb-md">NÁHLED: Generali Česká Distribuce - DPP i HPP</h1>';
+                    print( get_field('gcd') );
+                    break 2;
+                case 'editor':
+                    echo '<h1 class="heading heading-primary heading-preview mb-md">NÁHLED: Generali Česká pojišťovna - DPP i HPP</h1>';
+                    print( get_field('gcp') );
+                    echo '<h1 class="heading heading-primary heading-preview mb-md">NÁHLED: Generali Česká Distribuce - DPP i HPP</h1>';
+                    print( get_field('gcd') );
                     break 2;
                 case 'gcp-hpp':
                     print( get_field('gcp') );

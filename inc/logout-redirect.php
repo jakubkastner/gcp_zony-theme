@@ -19,11 +19,11 @@ add_action('wp_logout','auto_redirect_after_logout');
 function front_end_login_fail( $username ) {
 
     // Getting URL of the login page
-    $referrer = $_SERVER['HTTP_REFERER'];    
+    $referrer = $_SERVER['HTTP_REFERER'];
 
     // if there's a valid referrer, and it's not the default log-in screen
     if( !empty( $referrer ) && !strstr( $referrer,'wp-login' ) && !strstr( $referrer,'wp-admin' ) ) {
-        wp_redirect( get_permalink( 2 ) . "?login=failed" ); 
+        wp_redirect( get_permalink( 2 ) . "?login=failed" );
         exit;
     }
 }
@@ -41,7 +41,7 @@ function check_username_password( $login, $username, $password ) {
     $referrer = $_SERVER['HTTP_REFERER'];
 
     // if there's a valid referrer, and it's not the default log-in screen
-    if( !empty( $referrer ) && !strstr( $referrer,'wp-login' ) && !strstr( $referrer,'wp-admin' ) ) { 
+    if( !empty( $referrer ) && !strstr( $referrer,'wp-login' ) && !strstr( $referrer,'wp-admin' ) ) {
         if( $username == "" || $password == "" ){
             wp_redirect( get_permalink( 2 ) . "?login=empty" );
             exit;
@@ -57,14 +57,13 @@ add_action( 'authenticate', 'check_username_password', 1, 3);
  * Description: This redirects to the custom login page if visitor try to access wp-login.php or wp-admin.php
 **/
 function hide_default_login_page() {
-    
     global $pagenow;
     if( $pagenow == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET') {
         wp_safe_redirect( home_url() );
         exit;
     }
 }
-   
+
 if( !is_user_logged_in() ){
     add_action('init','hide_default_login_page');
 }
@@ -75,11 +74,11 @@ if( !is_user_logged_in() ){
 **/
 
 function remove_parameter_after_login($redirect_to, $request, $user ) {
-    
+
     // Is it an administrator?
-    if ( in_array( 'administrator', $user->roles ) )
+    if ( in_array( 'administrator', $user->roles ) || in_array( 'editor', $user->roles ) )
         return admin_url();
-    else 
+    else
         return home_url();
 }
 

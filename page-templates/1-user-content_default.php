@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: Vychozi
+ * Template name: Bez rozdělení
  */
 
 get_header();
